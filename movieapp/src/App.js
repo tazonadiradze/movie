@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import Movies from './Components/Movies/Movies';
+import Header from './Components/Header/Header';
+import { useState } from 'react';
 import './App.css';
 
+
+
 function App() {
+  const [search, setSearch] = useState('')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <div className='search'>
+        <input value={search} type='search' />
+      </div>
+      {/* i am not use reusable input as there is one of them */}
+
+      <Movies />
     </div>
-  );
+
+  )
 }
 
 export default App;
+
