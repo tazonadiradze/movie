@@ -1,0 +1,9 @@
+.h1-tag {
+ display: flex;
+ justify-content: center;
+}
+
+.aboutUs {
+ display: flex;
+ justify-content: flex-end;
+}

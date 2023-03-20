@@ -1,10 +1,11 @@
 import Data from '../../Data.json'
 import './Movies.css'
 
-const Movies = () => {
+const Movies = (props) => {
+ const { filter } = props
  return (
   <div className='movies-container'>
-   {Data.map(each => {
+   {filter.map(each => {
     return (
      <div className='movie-item'>
       <div className='image-wrapper'>
@@ -12,7 +13,8 @@ const Movies = () => {
       </div>
       <div className='movie-details'>
        <h3>{each.Title}</h3>
-       <p>{each.Year}</p>
+       <p>Year {each.Year}</p>
+       <p>IMDB {each.imdbRating}</p>
       </div>
      </div>
     )

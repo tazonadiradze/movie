@@ -1,10 +1,16 @@
+import { Fragment } from "react"
 
-
+import './Header.css'
 
 const Header = () => {
  return (
-  <h1>Welcome... </h1>
+  <Fragment>
 
+   <p className="aboutUs">About us</p>
+   <h1 className="h1-tag">PlayMovie</h1>
+
+
+  </Fragment>
  )
 }
 
