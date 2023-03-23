@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { CartContext } from '../../Context/CartContext';
 import Data from '../../Data.json';
+import { v4 } from 'uuid';
 import './Movies.css';
 
 
@@ -12,7 +13,7 @@ const Movies = (props) => {
   <div className="movies-container">
    {filter.map((each) => {
     return (
-     <div className="movie-item">
+     <div key={v4()} className="movie-item">
       <div className="image-wrapper">
        <img className="image" src={each.Images} alt={each.Title} />
       </div>

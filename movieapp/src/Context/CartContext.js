@@ -1,40 +1,31 @@
 import { createContext, useState } from "react";
 
 export const CartContext = createContext({
- addCartItem: () => { }
+ addItemToCart: () => { },
+ cartItems: [],
 });
 
-const addCartItem = (currentCartItems, productToAdd) => {
-
- const existingCartItem = currentCartItems.find(
-
-  (cartItem) => cartItem.id === productToAdd.id
-
- );
-
- if (existingCartItem) {
-  return currentCartItems.map((cartItem) =>
-   cartItem.id === productToAdd.id ? { ...cartItem } : cartItem
-  );
- }
-
- return [...currentCartItems, { ...productToAdd }];
-};
-
-
-
 export const CartProvider = ({ children }) => {
- const [cartItems, setCartItem] = useState([]);
+ const [cartItems, setCartItems] = useState([]);
 
  const addItemToCart = (productToAdd) => {
-  setCartItem([...cartItems, productToAdd]);
+  const existingCartItem = cartItems.find(
+   (cartItem) => cartItem.id === productToAdd.id
+
+  );
+  if (existingCartItem) {
+   // If the product already exists in the cart, don't add it again
+   return;
+  }
+  setCartItems([...cartItems, { ...productToAdd }]);
  };
 
  const value = {
   addItemToCart,
-  cartItems
-
+  cartItems,
  };
 
- return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+ return (
+  <CartContext.Provider value={value}>{children}</CartContext.Provider>
+ );
 };

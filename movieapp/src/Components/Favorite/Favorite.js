@@ -1,5 +1,7 @@
 import { useContext } from "react";
+import { v4 } from "uuid";
 import { CartContext } from "../../Context/CartContext";
+
 import "./Favorite.css";
 
 const Favorite = () => {
@@ -13,12 +15,15 @@ const Favorite = () => {
     <div className="div">
      {cartItems.map((item) => (
 
-      <div key={item.id}>{item.Title}{item.Year}  {<img className="img" src={item.Images} />}</div>
+      <div key={item.id}>{item.Title}{item.Year}  {<img className="img" src={item.Images} />} </div>
+
      ))}
     </div>
+
    )}
   </div>
- );
+
+ )
 };
 
-export default Favorite;
+export default Favorite

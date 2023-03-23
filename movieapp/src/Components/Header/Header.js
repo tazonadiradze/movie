@@ -1,13 +1,12 @@
 import { Fragment, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import Favorite from "../Favorite/Favorite"
 import './Header.css'
 
-const Header = () => {
- const [showFavorite, setShowFavorite] = useState(false)
 
- const showFavoriteDiv = () => {
-  setShowFavorite(true)
- }
+const Header = () => {
+ const navigate = useNavigate()
+
  return (
   <Fragment>
    <div className="header-wrapper">
@@ -15,12 +14,12 @@ const Header = () => {
 
 
 
-    <p onClick={showFavoriteDiv} className="aboutUs">Add to favorites</p>
+    <p onClick={() => { navigate('/Favorite') }} className="aboutUs"> Favorites</p>
 
 
 
    </div>
-   {showFavorite && <Favorite />}
+
   </Fragment>
  )
 }

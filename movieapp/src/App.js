@@ -1,8 +1,9 @@
+import Home from './Components/Home/Home';
 
-import Header from './Components/Header/Header';
-import Filter from './Components/Filter/Filter';
+import { Route, Routes } from 'react-router-dom';
 
 import './App.css';
+import Favorite from './Components/Favorite/Favorite';
 
 
 
@@ -11,8 +12,12 @@ function App() {
 
   return (
     <div>
-      <Header />
-      <Filter />
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path='/Favorite' element={<Favorite />} />
+      </Routes>
+
+
 
     </div>
 
