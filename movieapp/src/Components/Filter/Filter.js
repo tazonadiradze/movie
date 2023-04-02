@@ -5,8 +5,8 @@ import './Filter.css'
 const Filter = () => {
 
  const [search, setSearch] = useState('')
- const [showFilter, setShowFilter] = useState(false)
- console.log(Data)
+
+
 
 
 

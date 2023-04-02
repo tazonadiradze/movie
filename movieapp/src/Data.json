@@ -25,31 +25,6 @@
   ]
  },
  {
-  "Title": "The Dark Knight",
-  "id": 14,
-  "Year": 2008,
-  "director": "Christopher Nolan",
-  "imdbRating": "7.2",
-  "cast": [
-   "Christian Bale",
-   "Heath Ledger",
-   "Aaron Eckhart"
-  ],
-  "Images": "https://i.pinimg.com/236x/3d/28/a8/3d28a8c719eea1a555ddb6e64664a4df.jpg"
- },
- {
-  "Title": "The Shawshank Redemption",
-  "Year": 1994,
-  "director": "Frank Darabont",
-  "imdbRating": "9.0",
-  "cast": [
-   "Tim Robbins",
-   "Morgan Freeman",
-   "Bob Gunton"
-  ],
-  "Images": "https://i.pinimg.com/236x/54/a0/16/54a01648071f142081c17c3719722456.jpg"
- },
- {
   "Title": "300",
   "id": 13,
   "Year": "2006",

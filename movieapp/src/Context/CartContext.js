@@ -5,8 +5,12 @@ export const CartContext = createContext({
  cartItems: [],
 });
 
+
 export const CartProvider = ({ children }) => {
  const [cartItems, setCartItems] = useState([]);
+
+
+
 
  const addItemToCart = (productToAdd) => {
   const existingCartItem = cartItems.find(
@@ -14,7 +18,6 @@ export const CartProvider = ({ children }) => {
 
   );
   if (existingCartItem) {
-   // If the product already exists in the cart, don't add it again
    return;
   }
   setCartItems([...cartItems, { ...productToAdd }]);
