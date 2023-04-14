@@ -7,8 +7,13 @@ export const CartContext = createContext({
 });
 
 
+
 export const CartProvider = ({ children }) => {
- const [cartItems, setCartItems] = useState([]);
+ const [cartItems, setCartItems] = useState(() => {
+  const savedCartItems = JSON.parse(localStorage.getItem('cartItems'));
+  return savedCartItems || [];
+ });
+
 
 
  const deleteItemFromCart = (id) => {
@@ -16,10 +21,13 @@ export const CartProvider = ({ children }) => {
  }
 
  const addItemToCart = (productToAdd) => {
+  alert('added to favorites')
   const existingCartItem = cartItems.find(
    (cartItem) => cartItem.id === productToAdd.id
 
+
   );
+
   if (existingCartItem) {
    return;
   }

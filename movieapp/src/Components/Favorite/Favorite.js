@@ -8,6 +8,10 @@ import "./Favorite.css";
 const Favorite = () => {
  const { cartItems, deleteItemFromCart } = useContext(CartContext);
 
+ localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+ const savedCartItems = JSON.parse(localStorage.getItem('cartItems'));
+
  return (
   <Fragment>
    <Header />
@@ -19,14 +23,14 @@ const Favorite = () => {
      <div className="div">No favorite items added</div>
     ) : (
      <div className="div">
-      {cartItems.map((item) => (
+      {savedCartItems.map((item) => (
 
        <div key={item.id}>
         <div>{item.Title}</div>
         <div>{item.Year}</div>
 
         {<img className="img" src={item.Images} />}
-        <div onClick={() => deleteItemFromCart(item.id)}>X</div>
+        <div onClick={() => deleteItemFromCart(item.id)}>Remove</div>
        </div>
 
       ))}

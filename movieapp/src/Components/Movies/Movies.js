@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { CartContext } from '../../Context/CartContext';
-
+import { Link } from 'react-router-dom';
 import { v4 } from 'uuid';
 import './Movies.css';
 import { useNavigate } from 'react-router-dom';
@@ -36,9 +36,10 @@ const Movies = (props) => {
        <div
         onClick={() => addItemToCart(each)}
         className="button-div"
-       >
-        Add to favorites
+       > Add to favorites
+
        </div>
+       <div onClick={() => alert('No movie added yet')} className='button-div'>Watch now</div>
       </div>
      </div>
     );
