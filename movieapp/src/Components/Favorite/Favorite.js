@@ -1,29 +1,42 @@
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
 import { v4 } from "uuid";
 import { CartContext } from "../../Context/CartContext";
+import Header from "../Header/Header";
 
 import "./Favorite.css";
 
 const Favorite = () => {
- const { cartItems } = useContext(CartContext);
+ const { cartItems, deleteItemFromCart } = useContext(CartContext);
 
  return (
-  <div className="parent">
-   {cartItems.length === 0 ? (
-    <div className="div">No favorite items added</div>
-   ) : (
-    <div className="div">
-     {cartItems.map((item) => (
+  <Fragment>
+   <Header />
+   <h1 className="header">Favorites</h1>
+   <div className="parent">
 
-      <div key={item.id}>{item.Title}{item.Year}  {<img className="img" src={item.Images} />} </div>
+    {cartItems.length === 0 ? (
 
-     ))}
-    </div>
+     <div className="div">No favorite items added</div>
+    ) : (
+     <div className="div">
+      {cartItems.map((item) => (
 
-   )}
-  </div>
+       <div key={item.id}>
+        <div>{item.Title}</div>
+        <div>{item.Year}</div>
 
+        {<img className="img" src={item.Images} />}
+        <div onClick={() => deleteItemFromCart(item.id)}>X</div>
+       </div>
+
+      ))}
+     </div>
+
+    )}
+   </div>
+  </Fragment>
  )
 };
+
 
 export default Favorite
