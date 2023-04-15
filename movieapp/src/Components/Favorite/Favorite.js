@@ -4,6 +4,7 @@ import { CartContext } from "../../Context/CartContext";
 import Header from "../Header/Header";
 
 import "./Favorite.css";
+import { Link } from "react-router-dom";
 
 const Favorite = () => {
  const { cartItems, deleteItemFromCart } = useContext(CartContext);
@@ -16,6 +17,7 @@ const Favorite = () => {
   <Fragment>
    <Header />
    <h1 className="header">Favorites</h1>
+
    <div className="parent">
 
     {cartItems.length === 0 ? (
@@ -27,7 +29,7 @@ const Favorite = () => {
 
        <div key={item.id}>
         <div>{item.Title}</div>
-        <div>{item.Year}</div>
+        <div> Year:{item.Year}</div>
 
         {<img className="img" src={item.Images} />}
         <div onClick={() => deleteItemFromCart(item.id)}>Remove</div>

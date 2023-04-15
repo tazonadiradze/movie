@@ -1,3 +1,4 @@
+import Header from '../Header/Header';
 import './MovieDetails.css'
 
 const MovieDetails = (props) => {
@@ -5,8 +6,8 @@ const MovieDetails = (props) => {
 
  return (
   <div>
+   <Header />
    <h1>{movie.Title}</h1>
-
    <img className="img" src={movie.Images} alt={movie.Title} />
    <p>Runtime: {movie.Runtime}</p>
    <p>Director: {movie.Director}</p>
